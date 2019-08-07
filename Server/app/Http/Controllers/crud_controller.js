@@ -2,7 +2,6 @@ const config = require('../../../knexfile');
 const db = require('knex')(config['development']);
 
 const get = (req, res) => {
-    console.log(req.query);
     const {table} = req.query;
     db(table).select('*')
         .then(result => {
