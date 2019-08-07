@@ -1,17 +1,27 @@
 const nodemailer = require('nodemailer');
 
 const sendEmail = (req, res) => {
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
+    // var transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         type: 'OAuth2',
+    //         user: 'hombredehielosm@gmail.com',
+    //         clientId: '682945914388-i68vo29bn1osvtm73rgju2c21u4erv5h.apps.googleusercontent.com',
+    //         clientSecret: 'e0kh7hciDFNA5cDRQSeKY3jO',
+    //         refreshToken: '1/CUAG6Zmrm5BfgemktSsuhYny7P_Ix1meBvxFfR-aD8cE6p7aC3awEua4JKj5gFlp',
+    //         accessToken: 'ya29.GltdB-53phLWbLItcQNHLltRyxbXngZYIfbc8KSH27SRG_5Q3XqrruQeAqvkHNrxhfS7ZNoTgpmBfAbyaBEzkD_hWNqefOEMsp-2O2PcCAkiZPvvdRCni5eFPhsh'
+    //     }
+    // });
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        requireTLS: true,
         auth: {
-            type: 'OAuth2',
             user: 'hombredehielosm@gmail.com',
-            clientId: '682945914388-i68vo29bn1osvtm73rgju2c21u4erv5h.apps.googleusercontent.com',
-            clientSecret: 'e0kh7hciDFNA5cDRQSeKY3jO',
-            refreshToken: '1/CUAG6Zmrm5BfgemktSsuhYny7P_Ix1meBvxFfR-aD8cE6p7aC3awEua4JKj5gFlp',
-            accessToken: 'ya29.GltdB-53phLWbLItcQNHLltRyxbXngZYIfbc8KSH27SRG_5Q3XqrruQeAqvkHNrxhfS7ZNoTgpmBfAbyaBEzkD_hWNqefOEMsp-2O2PcCAkiZPvvdRCni5eFPhsh'
+            pass: 'aefnuobcbqiuzclt'
         }
-    });
+    })
     var mailOptions = {
         from: 'DesF <hombredehielosm@gmail.com>',
         to: 'adrian_reichell@hotmail.com',
