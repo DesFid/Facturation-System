@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { ProvOrdersComponent } from './provider/prov-orders/prov-orders.componen
 import { DeliveryNotesComponent } from './provider/delivery-notes/delivery-notes.component';
 import { ReclamationsComponent } from './provider/reclamations/reclamations.component';
 import { ProductsComponent } from './products/products.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,13 @@ import { ProductsComponent } from './products/products.component';
     DeliveryNotesComponent,
     ReclamationsComponent,
     ProductsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
