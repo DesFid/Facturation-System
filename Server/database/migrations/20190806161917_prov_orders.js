@@ -3,7 +3,7 @@ exports.up = function(knex) {
     return knex.schema.createTable('orders_providers', function (table) {
         table.increments('id').unsigned().primary();
         table.string('nif').notNullable().unique();
-        table.string('product_id').references('id').inTable('products').notNullable();
+        table.integer('product_id').references('id').inTable('products').notNullable();
         table.integer('quantity').notNullable();
         })
 };
